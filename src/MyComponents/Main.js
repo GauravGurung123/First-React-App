@@ -1,11 +1,18 @@
 import React from 'react'
+import Directory from './directory/directory-product'
 
 export default function Main() {
   return (
     <div className='col-12'>
-      <div className='col-12 mt-5 mb-5'>
-        <div className='container text-center '>
-          <h1 className='text-primary'>
+      <div
+        className='col-12 mb-4'
+        style={{
+          height: '400px',
+          backgroundImage: `url('https://icms-image.slatic.net/images/ims-web/9c68ba13-46bb-40d1-a084-ef15540a92cb.jpg')`,
+        }}
+      >
+        <div className='container text-center p-5 fsm'>
+          <h1>
             Find New
             <br />
             And Buy Today's Special 🎁
@@ -15,152 +22,15 @@ export default function Main() {
         <div className='row'>
           <button
             type='button'
-            className='span4 offset4 centered px-4 btn btn-primary border'
-            style={{ float: 'left' }}
+            className='span4 text-white button1 offset4 centered px-4 btn  border'
+            style={{ float: 'left', backgroundColor: '#008cba' }}
           >
-            Get Started
+            Start Shopping
           </button>
         </div>
       </div>
       <div className='container'>
-        <div className='row m-0'>
-          <div className='col-3 mb-4 mt-3'>
-            <div className='card'>
-              <div className='card-header bg-white'>
-                <div className='row'>
-                  <div className='col mb-3'>
-                    <img src='https://img.icons8.com/cute-clipart/64/000000/email-sign.png' />
-                  </div>
-                </div>
-                <h5 className='card-title text-primary'>Card title</h5>
-                <p className='card-text mb-4'>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-3 mb-4 mt-3'>
-            <div className='card'>
-              <div className='card-header bg-white'>
-                <div className='row'>
-                  <div className='col mb-3'>
-                    <img src='https://img.icons8.com/cute-clipart/64/000000/email-sign.png' />
-                  </div>
-                </div>
-                <h5 className='card-title text-primary'>Card title</h5>
-                <p className='card-text mb-4'>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-3 mb-4 mt-3'>
-            <div className='card'>
-              <div className='card-header bg-white'>
-                <div className='row'>
-                  <div className='col mb-3'>
-                    <img src='https://img.icons8.com/cute-clipart/64/000000/email-sign.png' />
-                  </div>
-                </div>
-                <h5 className='card-title text-primary'>Card title</h5>
-                <p className='card-text mb-4'>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-3 mb-4 mt-3'>
-            <div className='card'>
-              <div className='card-header bg-white'>
-                <div className='row'>
-                  <div className='col mb-3'>
-                    <img src='https://img.icons8.com/cute-clipart/64/000000/email-sign.png' />
-                  </div>
-                </div>
-                <h5 className='card-title text-primary'>Card title</h5>
-                <p className='card-text mb-4'>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-3 mb-4 mt-3'>
-            <div className='card'>
-              <div className='card-header bg-white'>
-                <div className='row'>
-                  <div className='col mb-3'>
-                    <img src='https://img.icons8.com/cute-clipart/64/000000/email-sign.png' />
-                  </div>
-                </div>
-                <h5 className='card-title text-primary'>Card title</h5>
-                <p className='card-text mb-4'>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-3 mb-4 mt-3'>
-            <div className='card'>
-              <div className='card-header bg-white'>
-                <div className='row'>
-                  <div className='col mb-3'>
-                    <img src='https://img.icons8.com/cute-clipart/64/000000/email-sign.png' />
-                  </div>
-                </div>
-                <h5 className='card-title text-primary'>Card title</h5>
-                <p className='card-text mb-4'>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-3 mb-4 mt-3'>
-            <div className='card'>
-              <div className='card-header bg-white'>
-                <div className='row'>
-                  <div className='col mb-3'>
-                    <img src='https://img.icons8.com/cute-clipart/64/000000/email-sign.png' />
-                  </div>
-                </div>
-                <h5 className='card-title text-primary'>Card title</h5>
-                <p className='card-text mb-4'>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='col-3 mb-4 mt-3'>
-            <div className='card'>
-              <div className='card-header bg-white'>
-                <div className='row'>
-                  <div className='col mb-3'>
-                    <img src='https://img.icons8.com/cute-clipart/64/000000/email-sign.png' />
-                  </div>
-                </div>
-                <h5 className='card-title text-primary'>Card title</h5>
-                <p className='card-text mb-4'>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Directory />
       </div>
     </div>
   )
