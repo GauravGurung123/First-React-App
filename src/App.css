@@ -1,7 +1,16 @@
 .App {
   text-align: center;
 }
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.fsm {
+  font-size: 24px;
+  color: #043c86d8;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
