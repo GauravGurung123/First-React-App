@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header() {
+export default function Header({ cart }) {
   return (
     <header className='row m-0 bg-white px-5 py-2 sticky-top'>
       <div className='col-2'>
@@ -31,7 +31,16 @@ export default function Header() {
             <a href='#' className='p-2 text-dark '>
               Product
             </a>
-            <button class='btn btn-sm float-right px-1 '>🛒 Cart</button>
+
+            <button
+              className='btn btn-sm float-right px-1 close'
+              data-toggle='modal'
+              data-target='#myModal'
+              data-dismiss='modal'
+              aria-label='Close'
+            >
+              🛒 Cart({cart.length})
+            </button>
           </div>
           <div className='col-4 pt-2'>
             <form className='form-inline'>
