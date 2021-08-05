@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Main({ products, setCart }) {
+export default function Main({ products, cartItems, onAdd, onRemove }) {
   return (
     <div className='col-12'>
       <div
@@ -34,18 +34,17 @@ export default function Main({ products, setCart }) {
             {products.length === 0
               ? 'No products to display'
               : products.map((product, index) => {
-                  return (
-                    <Product setCart={setCart} product={product} key={index} />
-                  )
+                  return <Product onAdd={onAdd} product={product} key={index} />
                 })}
           </>
         </div>
+        <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
       </div>
     </div>
   )
 }
 
-const Product = ({ product, setCart }) => (
+const Product = ({ product, onAdd }) => (
   <div className='col-4 mb-2 mt-2'>
     <div className='card'>
       <div className='card-header bg-white'>
@@ -64,17 +63,97 @@ const Product = ({ product, setCart }) => (
           to additional content. This content is a little bit longer.
           <div className='row '>
             <button
-              onClick={() => {
-                setCart(product)
-              }}
+              onClick={() => onAdd(product)}
               type='button'
               style={{ position: 'relative' }}
-              class='btn btn btn-light btn-block '
+              class='btn btn btn-light btn-block mt-4'
             >
               Add To Cart 🛒
             </button>
           </div>
         </p>
+      </div>
+    </div>
+  </div>
+)
+const Basket = ({ cartItems, onAdd, onRemove }) => (
+  <div
+    className='modal fade bd-example-modal-lg '
+    tabindex='-1'
+    role='dialog'
+    aria-labelledby='myLargeModalLabel'
+    aria-hidden='true'
+    style={{ width: `100%` }}
+  >
+    <div className='modal-dialog modal-lg pt-5 '>
+      <div className='modal-content bg-dark '>
+        <div className='modal-header'>
+          <h5 className='modal-title text-light'>
+            Your Shopping Cart ({cartItems.length})
+          </h5>
+          <button
+            type='button'
+            className='close text-danger'
+            data-dismiss='modal'
+            aria-label='Close'
+          >
+            &times;
+          </button>
+        </div>
+
+        <div className='modal-body'>
+          <table class='table table-hover table-dark' style={{ width: '100%' }}>
+            <thead>
+              <tr>
+                <th scope='col'>S.N.</th>
+                <th scope='col'>PID</th>
+                <th scope='col'>Product Name</th>
+                <th scope='col'>Quantity</th>
+                <th scope='col'>Price</th>
+                <th scope='col'>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <>
+                {cartItems.map((item, index) => (
+                  <tr>
+                    <td>{index + 1}</td>
+                    <td>{item.id}</td>
+                    <td>{item.title}</td>
+                    <td>{item.qty}</td>
+                    <td>Rs {item.price}</td>
+                    <td>
+                      <button
+                        onClick={() => onAdd(item)}
+                        className='btn btn-sm'
+                      >
+                        ➕
+                      </button>
+
+                      <button
+                        onClick={() => onRemove(item)}
+                        className='btn btn-sm'
+                      >
+                        ❌
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </>
+            </tbody>
+          </table>
+        </div>
+        {cartItems.length === 0 && (
+          <p className='text-center font-weight-bold blink_me text-danger'>
+            Your Shopping Cart is empty !
+          </p>
+        )}
+
+        <div className='modal-footer'>
+          <button type='button' className='btn btn-danger' data-dismiss='modal'>
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header({ cart }) {
+export default function Header({ cartItems }) {
   return (
     <header className='row m-0 bg-white px-5 py-2 sticky-top'>
       <div className='col-2'>
@@ -35,11 +35,11 @@ export default function Header({ cart }) {
             <button
               className='btn btn-sm float-right px-1 close'
               data-toggle='modal'
-              data-target='#myModal'
+              data-target='.bd-example-modal-lg'
               data-dismiss='modal'
               aria-label='Close'
             >
-              🛒 Cart({cart.length})
+              🛒<sup>({cartItems.length})</sup> Cart
             </button>
           </div>
           <div className='col-4 pt-2'>

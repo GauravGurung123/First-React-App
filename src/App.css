@@ -31,6 +31,16 @@
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+.blink_me {
+  animation: blinker 4s linear infinite;
+}
+
+@keyframes blinker {
+  80% {
+    opacity: 0;
+  }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
