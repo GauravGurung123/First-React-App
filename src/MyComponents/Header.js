@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header({ cartItems }) {
   return (
-    <header className='row m-0 bg-white px-5 py-2 sticky-top'>
+    <header className='row m-0 header-nav bg-white px-5 py-2 sticky-top'>
       <div className='col-2'>
         <div className='row m-0 '>
           <a href='#' className='pt-2  fsm '>
@@ -13,22 +13,22 @@ export default function Header({ cartItems }) {
       <div className='col-10'>
         <div className='row mb-4'>
           <div className='col-8 pt-3'>
-            <a href='#' className='p-2 text-dark'>
+            <a href='#' className='p-2 header-text '>
               Home
             </a>
-            <a href='#' className='p-2 text-dark '>
+            <a href='#' className='p-2 header-text'>
               New
             </a>
-            <a href='#' className='p-2 text-dark '>
+            <a href='#' className='p-2 header-text '>
               Sale
             </a>
-            <a href='#' className='p-2 text-dark '>
+            <a href='#' className='p-2 header-text '>
               Today'special
             </a>
-            <a href='#' className='p-2 text-dark '>
+            <a href='#' className='p-2 header-text '>
               About
             </a>
-            <a href='#' className='p-2 text-dark '>
+            <a href='#' className='p-2 header-text '>
               Product
             </a>
 

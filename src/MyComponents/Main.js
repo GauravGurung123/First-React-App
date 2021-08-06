@@ -46,8 +46,8 @@ export default function Main({ products, cartItems, onAdd, onRemove }) {
 
 const Product = ({ product, onAdd }) => (
   <div className='col-4 mb-2 mt-2'>
-    <div className='card'>
-      <div className='card-header bg-white'>
+    <div className='card' style={{ background: '#f5f5f5' }}>
+      <div className='card-header'>
         <div className='row'>
           <div className='col mb-3' style={{ overflow: `hidden` }}>
             <img className='product-img' src={product.imageURL} />
@@ -114,7 +114,8 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
                 <tr>
                   <th scope='col'>S.N.</th>
                   <th scope='col'>PID</th>
-                  <th scope='col'>Product Name</th>
+                  <th scope='col'>Image</th>
+                  <th scope='col'>Product</th>
                   <th scope='col'>Quantity</th>
                   <th scope='col'>Price</th>
                   <th scope='col'>Shipping</th>
@@ -126,6 +127,16 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
                     <tr>
                       <td>{index + 1}</td>
                       <td>{item.id}</td>
+                      <td>
+                        <img
+                          className='product-img'
+                          style={{
+                            width: '64px',
+                            height: '64px',
+                          }}
+                          src={item.imageURL}
+                        />
+                      </td>
                       <td>{item.title}</td>
                       <td>
                         {item.qty}
@@ -140,7 +151,7 @@ const Basket = ({ cartItems, onAdd, onRemove }) => {
                           onClick={() => onRemove(item)}
                           className='btn btn-sm'
                         >
-                          ❌
+                          ➖
                         </button>
                       </td>
                       <td>Rs {item.price.toFixed(2)}</td>
