@@ -14,7 +14,7 @@ export default function Header({ cartItems, onSearch, searchFields }) {
   //   )
   // })
   return (
-    <header className='row m-0 header-nav bg-white px-5 py-2 sticky-top'>
+    <header className='row m-0 header-nav px-5 py-2 sticky-top'>
       <div className='col-2'>
         <div className='row m-0 '>
           <a href='#' className='pt-2  fsm '>
@@ -45,7 +45,7 @@ export default function Header({ cartItems, onSearch, searchFields }) {
             </a>
 
             <button
-              className='btn btn-sm float-right px-1 close'
+              className='btn cart btn-sm float-right px-1 close'
               data-toggle='modal'
               data-target='.bd-example-modal-lg'
               data-dismiss='modal'
