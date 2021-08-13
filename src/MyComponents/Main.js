@@ -1,6 +1,13 @@
 import React from 'react'
 
-export default function Main({ products, cartItems, onAdd, onRemove }) {
+export default function Main({
+  productSearch,
+  searchFields,
+  cartItems,
+  onAdd,
+  onRemove,
+}) {
+  console.log(productSearch)
   return (
     <div className='col-12'>
       <div
@@ -31,9 +38,9 @@ export default function Main({ products, cartItems, onAdd, onRemove }) {
       <div className='container'>
         <div className='row m-0'>
           <>
-            {products.length === 0
+            {productSearch.length === 0
               ? 'No products to display'
-              : products.map((product, index) => {
+              : productSearch.map((product, index) => {
                   return <Product onAdd={onAdd} product={product} key={index} />
                 })}
           </>

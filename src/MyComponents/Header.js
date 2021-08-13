@@ -1,6 +1,18 @@
 import React from 'react'
 
-export default function Header({ cartItems }) {
+export default function Header({ cartItems, onSearch, searchFields }) {
+  // const [searchFields, setSearchFields] = useState('')
+  // const onSearch = e => {
+  //   setSearchFields(e.target.value)
+  // }
+  // let productSearch = products.filter(item => {
+  //   return Object.keys(item).some(key =>
+  //     item[key]
+  //       .toString()
+  //       .toLowerCase()
+  //       .includes(searchFields.toString().toLowerCase())
+  //   )
+  // })
   return (
     <header className='row m-0 header-nav bg-white px-5 py-2 sticky-top'>
       <div className='col-2'>
@@ -47,8 +59,10 @@ export default function Header({ cartItems }) {
               <input
                 className='form-control'
                 type='search'
-                placeholder='Search'
+                placeholder='Search in our Store'
                 aria-label='Search'
+                value={searchFields}
+                onChange={onSearch.bind(this)}
               />
               <button
                 className='btn btn-success float-right px-4 '

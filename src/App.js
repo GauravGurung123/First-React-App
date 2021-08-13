@@ -41,15 +41,30 @@ function App() {
   useEffect(() => {
     setProducts(datas)
   }, [])
-
+  const [searchFields, setSearchFields] = useState('')
+  const onSearch = e => {
+    setSearchFields(e.target.value)
+  }
+  let productSearch = products.filter(item => {
+    return Object.keys(item).some(key =>
+      item[key]
+        .toString()
+        .toLowerCase()
+        .includes(searchFields.toString().toLowerCase())
+    )
+  })
   return (
     <>
-      <Header cartItems={cartItems} />
+      <Header
+        cartItems={cartItems}
+        onSearch={onSearch}
+        searchFields={searchFields}
+      />
       <Main
         cartItems={cartItems}
         onRemove={onRemove}
         onAdd={onAdd}
-        products={products}
+        productSearch={productSearch}
         setCart={setCart}
       />
       <Footer />
